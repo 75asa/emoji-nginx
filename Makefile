@@ -23,13 +23,11 @@ ps:
 	docker-compose ps
 restart:
 	docker-compose restart
-logs-php-fpm:
+log-php:
 	docker-compose logs php-fpm
-logs-nginx:
+log-nginx:
 	docker-compose logs nginx
-logs-mongo:
+log-mongo:
 	docker-compose logs mongo
-logs-mongo-x:
+logs-mongox:
 	docker-compose logs mongo-express
-
-
