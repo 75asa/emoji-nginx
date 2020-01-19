@@ -13,6 +13,8 @@ laravel:
 	docker-compose restart
 php-ash:
 	docker-compose exec php-fpm /bin/ash
+mongo-bash:
+	docker-compose exec mongo bash
 composer:
 	docker-compose run composer $(arg)
 artisan:
