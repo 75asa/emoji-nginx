@@ -1,4 +1,4 @@
-FROM php:${PHP_VERSION}-fpm-alpine3.8
+FROM php:7.3-fpm-alpine3.8
 
 # Install PHP extensions
 RUN apk update && apk upgrade --update && apk --no-cache add \
