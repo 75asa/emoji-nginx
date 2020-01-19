@@ -7,19 +7,24 @@ down-v:
 down:
 	docker-compose down
 laravel:
-	mkdir ./laravel
-	docker-compose exec app composer create-project --prefer-dist "laravel/laravel=6.0" laravel
-	docker-compose exec app composer require jenssegers/mongodb
+	docker-compose run composer global require laravel/installer
+	docker-compose run composer create-project --prefer-dist "laravel/laravel=6.0" .
+	docker-compose run composer require jenssegers/mongodb
 laravel-bash:
-	docker-compose exec app bash
+	docker-compose exec php-fpm /bin/ash
+composer:
+	docker-compose run composer $(arg1) $(arg2)
+artisan:
+	docker-compose exec php-fpm php artisan $(arg1) $(arg2)
 ps:
 	docker-compose ps
 restart:
 	docker-compose restart
-logs-app:
-	docker-compose logs app
+logs-php-fpm:
+	docker-compose logs php-fpm
 logs-mongo:
 	docker-compose logs mongo
 logs-mongo-x:
 	docker-compose logs mongo-express
+
 
