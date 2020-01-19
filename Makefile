@@ -19,6 +19,9 @@ composer:
 	docker-compose run composer $(arg)
 artisan:
 	docker-compose exec php-fpm php artisan $(arg)
+art-clear:
+	docker-compose exec php-fpm php artisan config:clear
+	docker-compose exec php-fpm php artisan cache:clear
 php:
 	docker-compose exec php-fpm php $(arg)
 ps:
