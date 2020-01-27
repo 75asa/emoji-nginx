@@ -1,3 +1,5 @@
 .env
 src/.env
 mongo/data/
+node_modules/
+.vscode/
